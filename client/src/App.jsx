@@ -3,7 +3,10 @@ import { UserContextProvider, UserContext} from "./userContext";
 import Routes from "./route";
 
 function App() {
-  axios.defaults.baseURL = 'http://localhost:4040';
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const isProduction = import.meta.env.MODE === 'production';
+  axios.defaults.baseURL = isProduction ? apiUrl : 'http://localhost:4040';
+  //axios.defaults.baseURL = 'http://localhost:4040';
   axios.defaults.withCredentials = true;
 
   return ( 
