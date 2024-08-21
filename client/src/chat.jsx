@@ -23,7 +23,7 @@ export default function Chat() {
     function connectToWs() {
         const ws = new WebSocket(
             process.env.NODE_ENV === 'production'
-            ?   `wss://${import.meta.env.VITE_API_WS_URL}`
+            ?   `wss://${import.meta.env.VITE_API_URL}`
             :   'ws://localhost:4040'
         )
         setWs(ws)
