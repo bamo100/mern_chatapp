@@ -127,8 +127,8 @@ app.post('/login', async(req, res) => {
 // })
 
 // 8dgSDo27pacPjEOO
-
-const server = app.listen(4040)
+const port = process.env.PORT || 4040;
+const server = app.listen(port)
 // console.log(server)
 const wss = new ws.WebSocketServer({server})
 wss.on('connection', (connection, req) => {

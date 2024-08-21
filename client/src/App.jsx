@@ -4,6 +4,7 @@ import Routes from "./route";
 
 function App() {
   const apiUrl = import.meta.env.VITE_API_URL;
+  //console.log(import.meta.env.VITE_API_WS_URL);
   const isProduction = import.meta.env.MODE === 'production';
   axios.defaults.baseURL = isProduction ? apiUrl : 'http://localhost:4040';
   //axios.defaults.baseURL = 'http://localhost:4040';
